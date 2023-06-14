@@ -22,6 +22,7 @@ namespace PrimeNumbersApp
 
         private void leftBtn_Click(object sender, EventArgs e)
         {
+            leftListView.Items.Clear();
             if (!lBgWorker.IsBusy)
                 lBgWorker.RunWorkerAsync();
         }
@@ -29,7 +30,8 @@ namespace PrimeNumbersApp
 
         private void rightBtn_Click(object sender, EventArgs e)
         {
-         
+            rightListView.Items.Clear();
+
             if (!rBgWorker.IsBusy)
                 rBgWorker.RunWorkerAsync();
         }
@@ -40,7 +42,6 @@ namespace PrimeNumbersApp
         {
             Task.Run(() =>
             {
-                rightListView.Items.Clear();
                 if (int.TryParse(rTextBox.Text, out int rightValue))
                 {
                     foreach (int i in MathUtils.GeneratePrimeNumbers(rightValue))
@@ -60,12 +61,11 @@ namespace PrimeNumbersApp
         {
             Task.Run(() =>
             {
-                leftListView.Items.Clear();
-
                 if (int.TryParse(lTextBox.Text, out int leftValue))
                 {
                     foreach (int i in MathUtils.GeneratePrimeNumbers(leftValue))
                     {
+                        
                         leftListView.Invoke(new Action(() =>
                         {
                             var item = new ListViewItem(i.ToString());

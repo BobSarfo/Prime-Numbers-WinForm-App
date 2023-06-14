@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace PrimeNumbersApp
 {
     public class MathUtils
     {
+
+        [DllImport("C:\\Users\\Bob\\Desktop\\Projects\\Study\\C++\\PrimeNumbersApp\\x64\\Debug\\ExternMathUtilities.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int addTwoNumber(int a, int b);
         public static IEnumerable<int> GeneratePrimeNumbers(int N)
         {
             for (int i = 2; i <= N; i++)
@@ -14,7 +18,6 @@ namespace PrimeNumbersApp
                 if (IsPrime(i))
                     yield return i;
             }
-
         }
 
         static bool IsPrime(int number) 
