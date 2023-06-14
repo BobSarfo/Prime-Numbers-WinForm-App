@@ -10,7 +10,7 @@ namespace PrimeNumbersApp
     {
 
         [DllImport("C:\\Users\\Bob\\Desktop\\Projects\\Study\\C++\\PrimeNumbersApp\\x64\\Debug\\ExternMathUtilities.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int addTwoNumber(int a, int b);
+        public static extern double add(double a, double b);
         public static IEnumerable<int> GeneratePrimeNumbers(int N)
         {
             for (int i = 2; i <= N; i++)

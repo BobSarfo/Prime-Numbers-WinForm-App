@@ -19,7 +19,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 
 extern "C" {
 
-    __declspec(dllexport) int add(int a, int b) {
+    __declspec(dllexport) double add(double a, double b) {
         return a + b;
     }
     __declspec(dllexport) int subtract(int a, int b) {

@@ -39,6 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lBgWorker = new System.ComponentModel.BackgroundWorker();
             this.rBgWorker = new System.ComponentModel.BackgroundWorker();
+            this.addInput1 = new System.Windows.Forms.TextBox();
+            this.addInput2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.addCalculateLbl = new System.Windows.Forms.Label();
+            this.calculateBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lTextBox
@@ -132,11 +138,68 @@
             this.rBgWorker.WorkerReportsProgress = true;
             this.rBgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.rBgWorker_DoWork);
             // 
+            // addInput1
+            // 
+            this.addInput1.Location = new System.Drawing.Point(75, 493);
+            this.addInput1.Name = "addInput1";
+            this.addInput1.Size = new System.Drawing.Size(100, 22);
+            this.addInput1.TabIndex = 6;
+            // 
+            // addInput2
+            // 
+            this.addInput2.AcceptsReturn = true;
+            this.addInput2.Location = new System.Drawing.Point(235, 493);
+            this.addInput2.Name = "addInput2";
+            this.addInput2.Size = new System.Drawing.Size(100, 22);
+            this.addInput2.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(201, 499);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(14, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "+";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(351, 496);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "=";
+            // 
+            // addCalculateLbl
+            // 
+            this.addCalculateLbl.AutoSize = true;
+            this.addCalculateLbl.Location = new System.Drawing.Point(392, 496);
+            this.addCalculateLbl.Name = "addCalculateLbl";
+            this.addCalculateLbl.Size = new System.Drawing.Size(0, 16);
+            this.addCalculateLbl.TabIndex = 10;
+            // 
+            // calculateBtn
+            // 
+            this.calculateBtn.Location = new System.Drawing.Point(138, 531);
+            this.calculateBtn.Name = "calculateBtn";
+            this.calculateBtn.Size = new System.Drawing.Size(121, 36);
+            this.calculateBtn.TabIndex = 11;
+            this.calculateBtn.Text = "Calculate";
+            this.calculateBtn.UseVisualStyleBackColor = true;
+            this.calculateBtn.Click += new System.EventHandler(this.calculateBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 496);
+            this.ClientSize = new System.Drawing.Size(797, 619);
+            this.Controls.Add(this.calculateBtn);
+            this.Controls.Add(this.addCalculateLbl);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.addInput2);
+            this.Controls.Add(this.addInput1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lNumber);
@@ -167,5 +230,11 @@
         private System.Windows.Forms.Label label2;
         private System.ComponentModel.BackgroundWorker lBgWorker;
         private System.ComponentModel.BackgroundWorker rBgWorker;
+        private System.Windows.Forms.TextBox addInput1;
+        private System.Windows.Forms.TextBox addInput2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label addCalculateLbl;
+        private System.Windows.Forms.Button calculateBtn;
     }
 }

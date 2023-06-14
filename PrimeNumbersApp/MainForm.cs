@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -65,7 +64,7 @@ namespace PrimeNumbersApp
                 {
                     foreach (int i in MathUtils.GeneratePrimeNumbers(leftValue))
                     {
-                        
+
                         leftListView.Invoke(new Action(() =>
                         {
                             var item = new ListViewItem(i.ToString());
@@ -77,5 +76,16 @@ namespace PrimeNumbersApp
             });
         }
 
+        private void calculateBtn_Click(object sender, EventArgs e)
+        {
+            Task.Run(() =>
+            {
+                addCalculateLbl.Invoke(new Action(() =>
+                {
+                    if (double.TryParse(addInput1.Text, out double input1) && double.TryParse(addInput2.Text, out double input2))
+                        addCalculateLbl.Text = MathUtils.add(input1,input2).ToString();
+                }));
+            });
+        }
     }
 }
