@@ -40,8 +40,8 @@ namespace PrimeNumbersApp
         {
             StringBuilder sb = new StringBuilder();
 
-            int[] numbers = new int[arr.Length];
-            int[] counts = new int[arr.Length];
+            //int[] numbers = new int[arr.Length];
+            //int[] counts = new int[arr.Length];
 
             int currentPosition = 0;
 
@@ -58,8 +58,8 @@ namespace PrimeNumbersApp
                         arr[j] = -1;
                     }
                 }
-                numbers[currentPosition] = number;
-                counts[currentPosition] = numberCount;
+                //numbers[currentPosition] = number;
+                //counts[currentPosition] = numberCount;
                 currentPosition++;
                 sb.Append($"{number} : {numberCount} , \n");
             }

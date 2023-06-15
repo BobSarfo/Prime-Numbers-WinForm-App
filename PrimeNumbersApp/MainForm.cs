@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,7 +40,7 @@ namespace PrimeNumbersApp
 
         private void rBgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            Task.Run(() =>
+            Thread thread = new Thread(() =>
             {
                 if (int.TryParse(rTextBox.Text, out int rightValue))
                 {
@@ -54,11 +55,12 @@ namespace PrimeNumbersApp
                     }
                 }
             });
+            thread.Start(); 
         }
 
         private void lBgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            Task.Run(() =>
+            Thread thread = new Thread(() => 
             {
                 if (int.TryParse(lTextBox.Text, out int leftValue))
                 {
@@ -74,18 +76,20 @@ namespace PrimeNumbersApp
                     }
                 }
             });
+            thread.Start(); 
         }
 
         private void calculateBtn_Click(object sender, EventArgs e)
         {
-            Task.Run(() =>
-            {
+            Thread thread = new Thread(() => {
                 addCalculateLbl.Invoke(new Action(() =>
                 {
                     if (double.TryParse(addInput1.Text, out double input1) && double.TryParse(addInput2.Text, out double input2))
-                        addCalculateLbl.Text = MathUtils.add(input1,input2).ToString();
+                        addCalculateLbl.Text = MathUtils.add(input1, input2).ToString();
                 }));
             });
+
+            thread.Start(); 
         }
     }
 }
